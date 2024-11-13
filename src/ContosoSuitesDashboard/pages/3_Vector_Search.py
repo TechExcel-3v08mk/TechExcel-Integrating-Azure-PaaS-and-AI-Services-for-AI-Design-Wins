@@ -13,7 +13,8 @@ def handle_query_vectorization(query):
     st.write(response)
     ###CUSTOM
 
-    return response.text
+    #return response.text
+    return response
 
 def handle_vector_search(query_vector, max_results=5, minimum_similarity_score=0.8):
     """Perform a vector search using the VectorSearch endpoint."""
@@ -26,7 +27,8 @@ def handle_vector_search(query_vector, max_results=5, minimum_similarity_score=0
     st.write(response)
     ###CUSTOM
 
-    return response
+    #return response
+    return "Anything"
 
 def main():
     """Main function for the Vector Search over Maintenance Requests Streamlit page."""
