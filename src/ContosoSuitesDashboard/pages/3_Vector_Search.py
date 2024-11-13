@@ -10,7 +10,7 @@ def handle_query_vectorization(query):
 
     ###CUSTOM
     st.write("Vectorization Response")
-    st.write(response)
+    st.write(api_endpoint)
     ###CUSTOM
 
     #return response.text
