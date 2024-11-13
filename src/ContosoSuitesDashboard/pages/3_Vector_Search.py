@@ -7,6 +7,12 @@ def handle_query_vectorization(query):
     """Vectorize the query using the Vectorize endpoint."""
     api_endpoint = st.secrets["api"]["endpoint"]
     response = requests.get(f"{api_endpoint}/Vectorize", params={"text": query}, timeout=10, verify=False)
+
+    ###CUSTOM
+    st.write("Vectorization Response")
+    st.write(response)
+    ###CUSTOM
+
     return response.text
 
 def handle_vector_search(query_vector, max_results=5, minimum_similarity_score=0.8):
@@ -14,6 +20,12 @@ def handle_vector_search(query_vector, max_results=5, minimum_similarity_score=0
     api_endpoint = st.secrets["api"]["endpoint"]
     headers = {"Content-Type": "application/json"}
     response = requests.post(f"{api_endpoint}/VectorSearch", data=query_vector, params={"max_results": max_results, "minimum_similarity_score": minimum_similarity_score}, headers=headers, timeout=10, verify=False)
+    
+    ###CUSTOM
+    st.write("Vectorization Query Response")
+    st.write(response)
+    ###CUSTOM
+
     return response
 
 def main():
@@ -56,14 +68,14 @@ def main():
                 # Display the results.
                 st.write("## Results")
 
-                ###
+                ###CUSTOM
                 st.write("Query")
                 st.write(query)
                 st.write("Query Vector")
                 st.write(query_vector)
                 st.write("Vector Search")
                 st.write(vector_search_results)
-                ###
+                ###CUSTOM
 
                 # Exercise 3 Task 3 TODO #6: Display the results as a table.
                 st.table(vector_search_results.json())
