@@ -55,8 +55,18 @@ def main():
                 vector_search_results = handle_vector_search(query_vector, max_results, minimum_similarity_score)
                 # Display the results.
                 st.write("## Results")
+
+                ###
+                st.write("Query")
+                st.write(query)
+                st.write("Query Vector")
+                st.write(query_vector)
+                st.write("Vector Search")
+                st.write(vector_search_results)
+                ###
+
                 # Exercise 3 Task 3 TODO #6: Display the results as a table.
-                st.table(query + "\n" + query_vector + "n" + vector_search_results)
+                st.table(vector_search_results.json())
                 
             else:
                 st.warning("Please enter a query.")
