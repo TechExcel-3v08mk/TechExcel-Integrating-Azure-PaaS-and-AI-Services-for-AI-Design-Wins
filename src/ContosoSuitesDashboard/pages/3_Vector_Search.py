@@ -56,7 +56,7 @@ def main():
                 # Display the results.
                 st.write("## Results")
                 # Exercise 3 Task 3 TODO #6: Display the results as a table.
-                st.table(vector_search_results)
+                st.table(query + "\n" + query_vector + "n" + vector_search_results)
                 
             else:
                 st.warning("Please enter a query.")
